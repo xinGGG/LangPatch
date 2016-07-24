@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "LangPatchFileManager.h"
+#define GetCacheWithFileName(FileName) [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:FileName]
+#define L(content,defaultString) [[LangPatchFileManager defaultUtil] internationalizationKey:content default:defaultString]
 
 @interface AppDelegate ()
 
@@ -22,23 +24,23 @@
     //根据设备语言初始化语言
     [LangPatchFileManager initUserLanguage];
     
-[[LangPatchFileManager defaultUtil] setupCallBack:^(LangePathStartMode type, NSDictionary *data, NSError *error) {
-    NSLog(@"%u",type);
-    NSLog(@"%@",error);
-    switch (type) {
-        case LangePathStartModeUnknow:
-            [LangPatchFileManager  setupLanguageWithDictionary:[LangPatchFileManager findProjectResource:@"en_US" ofType:@".json"] ];
-            break;
-        case LangePathStartModeNeedUpdate:
-            
-            break;
-        case LangePathStartModeNoNeedUpdate:
-            
-            break;
-        default:
-            break;
-    }
-}];
+//[[LangPatchFileManager defaultUtil] setupCallBack:^(LangePathStartMode type, NSDictionary *data, NSError *error) {
+//    NSLog(@"%u",type);
+//    NSLog(@"%@",error);
+//    switch (type) {
+//        case LangePathStartModeUnknow:
+////            [[LangPatchFileManager defaultUtil] ];
+//            break;
+//        case LangePathStartModeNeedUpdate:
+//            
+//            break;
+//        case LangePathStartModeNoNeedUpdate:
+//            
+//            break;
+//        default:
+//            break;
+//    }
+//}];
     //自定义默认语言
 //    [LangPatchFileManager initWithLanguage:@"en-US"];
     

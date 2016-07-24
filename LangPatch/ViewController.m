@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LangPatchFileManager.h"
+#import "DownloadTool.h"
 #define L(content,defaultString) [[LangPatchFileManager defaultUtil] internationalizationKey:content default:defaultString]
 
 @interface ViewController ()
@@ -20,9 +21,13 @@
 //全json替换语言包
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.content = [LangPatchFileManager findProjectResource:@"en_US" ofType:@".json"];
-    NSLog(@"%@",L(@"HomePage_search_title", @"heeloo"));
+    DownloadTool *tool =  [[DownloadTool alloc] init];
+    [tool DownloadWithUrl:@"http://localhost:8080/public/en_US.json" success:^(id responseObject) {
+        [[LangPatchFileManager defaultUtil] setupFromSandboxCache];
+        NSLog(@"%@",L(@"HomePage_search_title", @"heeloo"));
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

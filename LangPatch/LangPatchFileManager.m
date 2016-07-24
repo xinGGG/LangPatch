@@ -8,6 +8,8 @@
 
 #import "LangPatchFileManager.h"
 #import "NSDictionary+ChangeNull.h"
+#define GetCacheWithFileName(FileName) [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:FileName]
+#define L(content,defaultString) [[LangPatchFileManager defaultUtil] internationalizationKey:content default:defaultString]
 
 
 static NSString *CurrentLangeKey = @"LPCurrentLanguage";
@@ -68,29 +70,57 @@ static NSString *CurrentLangeKey = @"LPCurrentLanguage";
 }
 
 - (void)setupCallBack:(void(^)(LangePathStartMode type, NSDictionary *data, NSError *error))success{
-    NSLog(@"执行脚本");
+    //获取当前语言
     NSString *Language = [LangPatchFileManager userLanguage];
+    NSLog(@"%@",Language);
+    //容错
     if (Language != nil) {
         NSError *error = [NSError errorWithDomain:@"初始化语言失败" code:1000 userInfo:nil];
         !success?:success(LangePathStartModeUnknow,nil,error);
         return;
     }
     
+    //unknow
+    
+    !success?:success(LangePathStartModeUnknow,nil,nil);
+
+    //分发请求
+    
     NSLog(@"还会执行");
     
 }
 
 
+#pragma mark - 策略部分
+#pragma mark - 项目目录读取
+- (BOOL)setupFromProjectResource{
+    NSString *currentLang = [LangPatchFileManager userLanguage];
+    return [[LangPatchFileManager defaultUtil] setupLanguageForm:LangePathDataTypeFromProject Resource:currentLang ofType:@"json"];
+}
 
-
-//储存当前语言包时效性
-- (void)markLanguageTime:(NSString *)Time{
-    
+- (BOOL)setupFromSandboxCache{
+    NSString *currentLang = [LangPatchFileManager userLanguage];
+    return [[LangPatchFileManager defaultUtil] setupLanguageForm:LangePathDataTypeFromCache Resource:currentLang ofType:@"json"];
 }
 
 #pragma mark - 执行
-- (BOOL)setupProjectResource:(NSString *)Resource ofType:(NSString *)Type{
-    id res = [self findProjectResource:Resource ofType:Type];
+//从cache查找
+
+//从项目查找
+- (BOOL)setupLanguageForm:(LangePathDataType)DataType Resource:(NSString *)Resource ofType:(NSString *)Type{
+    //先本地查找
+    //项目文件查找
+    id res ;
+    switch (DataType) {
+        case LangePathDataTypeFromProject:
+            res = [self findFromProjectResource:Resource ofType:Type];
+            break;
+        case LangePathDataTypeFromCache:
+            res = [self findFromCacheResource:Resource ofType:Type];
+            break;
+        default:
+            break;
+    }
     if (res!=nil) {
         return [self setupLanguageWithDictionary:res];
     }else{
@@ -99,28 +129,32 @@ static NSString *CurrentLangeKey = @"LPCurrentLanguage";
 }
 
 #pragma mark - private
-- (id)findProjectResource:(NSString *)Resource ofType:(NSString *)Type{
-    NSString *url = [[NSBundle mainBundle] pathForResource:Resource ofType:Type];
-    NSString *responseString =
-    [[NSString alloc] initWithData:[NSData dataWithContentsOfFile:url] encoding:NSUTF8StringEncoding];
-    NSData *data = [responseString dataUsingEncoding:NSUTF8StringEncoding];
-    id content = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    return content;
+#pragma mark 沙盒缓存查找
+- (id)findFromCacheResource:(NSString *)Resource ofType:(NSString *)Type{
+    NSString *langFileName = [NSString stringWithFormat:@"%@.%@",Resource,Type];
+    NSString *url = GetCacheWithFileName(langFileName);
+    NSLog(@"%@",url);
+    return [self returnContentWithUrl:url];
 }
 
+#pragma mark 项目文件查找
+- (id)findFromProjectResource:(NSString *)Resource ofType:(NSString *)Type{
+    NSString *url = [[NSBundle mainBundle] pathForResource:Resource ofType:Type];
+    return [self returnContentWithUrl:url];
+}
 
+#pragma mark 录入
 - (BOOL)setupLanguageWithDictionary:(NSDictionary *)dict{
-    
-    NSLog(@"%@",dict);
+//    NSLog(@"%@",dict);
     if (![[dict allKeys] containsObject:@"content"]) {
         return NO;
     }
     NSDictionary *contentDict = [dict objectForKeyWithoutNull:@"content"];
-    NSLog(@"%@",contentDict);
     self.LangDict = [NSMutableDictionary dictionaryWithDictionary:contentDict];
     return !self.LangDict?NO:YES;
 }
 
+#pragma mark 输出
 - (NSString *)internationalizationKey:(NSString *)Key default:(NSString *)Default{
     if (!self.LangDict || [self.LangDict isEqual:@""]) {
         return Default;
@@ -133,8 +167,16 @@ static NSString *CurrentLangeKey = @"LPCurrentLanguage";
     
 }
 
-#pragma mark private
-- (NSString *)setupNowTime {
+#pragma mark - private
+#pragma mark - 根据url输出json
+- (id)returnContentWithUrl:(NSString *)url{
+    NSString *responseString =
+    [[NSString alloc] initWithData:[NSData dataWithContentsOfFile:url] encoding:NSUTF8StringEncoding];
+    NSData *data = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+    return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+}
+
++ (NSString *)setupNowTime {
     NSDate *currentDate = [NSDate date];//获取当前时间，日期
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];

@@ -17,6 +17,9 @@
 		21023A341D43222A0044546F /* en_US.json in Resources */ = {isa = PBXBuildFile; fileRef = 21023A331D43222A0044546F /* en_US.json */; };
 		21023A3B1D4337CD0044546F /* LangPatchFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21023A3A1D4337CD0044546F /* LangPatchFileManager.m */; };
 		21023A3E1D433ACE0044546F /* NSDictionary+ChangeNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 21023A3D1D433ACE0044546F /* NSDictionary+ChangeNull.m */; };
+		2116EA1F1D44E47E00D54306 /* DownloadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116EA1E1D44E47E00D54306 /* DownloadTool.m */; };
+		2116EA211D44E63C00D54306 /* DownToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116EA201D44E63C00D54306 /* DownToolTests.m */; };
+		2116EA241D44E65700D54306 /* AFTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116EA231D44E65700D54306 /* AFTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,11 @@
 		21023A3A1D4337CD0044546F /* LangPatchFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LangPatchFileManager.m; sourceTree = "<group>"; };
 		21023A3C1D433ACE0044546F /* NSDictionary+ChangeNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ChangeNull.h"; sourceTree = "<group>"; };
 		21023A3D1D433ACE0044546F /* NSDictionary+ChangeNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ChangeNull.m"; sourceTree = "<group>"; };
+		2116EA1D1D44E47E00D54306 /* DownloadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTool.h; sourceTree = "<group>"; };
+		2116EA1E1D44E47E00D54306 /* DownloadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTool.m; sourceTree = "<group>"; };
+		2116EA201D44E63C00D54306 /* DownToolTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownToolTests.m; sourceTree = "<group>"; };
+		2116EA221D44E65700D54306 /* AFTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTestCase.h; sourceTree = "<group>"; };
+		2116EA231D44E65700D54306 /* AFTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,8 @@
 				21023A121D43209D0044546F /* ViewController.m */,
 				21023A391D4337CD0044546F /* LangPatchFileManager.h */,
 				21023A3A1D4337CD0044546F /* LangPatchFileManager.m */,
+				2116EA1D1D44E47E00D54306 /* DownloadTool.h */,
+				2116EA1E1D44E47E00D54306 /* DownloadTool.m */,
 				21023A3C1D433ACE0044546F /* NSDictionary+ChangeNull.h */,
 				21023A3D1D433ACE0044546F /* NSDictionary+ChangeNull.m */,
 				21023A141D43209D0044546F /* Main.storyboard */,
@@ -118,7 +128,10 @@
 		21023A241D43209D0044546F /* LangPatchTests */ = {
 			isa = PBXGroup;
 			children = (
+				2116EA221D44E65700D54306 /* AFTestCase.h */,
+				2116EA231D44E65700D54306 /* AFTestCase.m */,
 				21023A251D43209D0044546F /* LangPatchTests.m */,
+				2116EA201D44E63C00D54306 /* DownToolTests.m */,
 				21023A271D43209D0044546F /* Info.plist */,
 			);
 			path = LangPatchTests;
@@ -228,6 +241,7 @@
 				21023A131D43209D0044546F /* ViewController.m in Sources */,
 				21023A101D43209D0044546F /* AppDelegate.m in Sources */,
 				21023A3B1D4337CD0044546F /* LangPatchFileManager.m in Sources */,
+				2116EA1F1D44E47E00D54306 /* DownloadTool.m in Sources */,
 				21023A3E1D433ACE0044546F /* NSDictionary+ChangeNull.m in Sources */,
 				21023A0D1D43209D0044546F /* main.m in Sources */,
 			);
@@ -238,6 +252,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				21023A261D43209D0044546F /* LangPatchTests.m in Sources */,
+				2116EA241D44E65700D54306 /* AFTestCase.m in Sources */,
+				2116EA211D44E63C00D54306 /* DownToolTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +434,7 @@
 				21023A2C1D43209D0044546F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21023A2D1D43209D0044546F /* Build configuration list for PBXNativeTarget "LangPatchTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +443,7 @@
 				21023A2F1D43209D0044546F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
