@@ -39,9 +39,6 @@
 }
 - (void)testDownTool{
     
-    
-
-
     [self.tool DownloadWithUrl:@"http://localhost:8080/public/en_us.json" success:^(NSString *FullPath) {
         NSLog(@"%@",FullPath);
         XCTAssertNotNil(FullPath);

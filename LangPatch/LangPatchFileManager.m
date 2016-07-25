@@ -8,6 +8,7 @@
 
 #import "LangPatchFileManager.h"
 #import "NSDictionary+ChangeNull.h"
+#import "LangPatchNetWork.h"
 #define GetCacheWithFileName(FileName) [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:FileName]
 #define L(content,defaultString) [[LangPatchFileManager defaultUtil] internationalizationKey:content default:defaultString]
 
@@ -79,16 +80,20 @@ static NSString *CurrentLangeKey = @"LPCurrentLanguage";
         !success?:success(LangePathStartModeUnknow,nil,error);
         return;
     }
-    
+//    
+//    if ([self setupLanguageForm:LangePathDataTypeFromProject Resource:Language ofType:@"json"]) {
+//        !success?:success(LangePathStartModeUnknow,nil,nil);
+//    };
+//    
     //unknow
-    
-    !success?:success(LangePathStartModeUnknow,nil,nil);
+//    !success?:success(LangePathStartModeUnknow,nil,nil);
 
     //分发请求
     
     NSLog(@"还会执行");
     
 }
+
 
 
 #pragma mark - 策略部分

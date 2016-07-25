@@ -19,13 +19,91 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LangPatch/ViewController.m"
-            timestampString = "491062981.436346"
+            filePath = "LangPatchTests/NetWorkTest.m"
+            timestampString = "491153364.964595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-testExample"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__26-[NetWorkTest testExample]_block_invoke"
+                  moduleName = "LangPatchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatchTests/NetWorkTest.m"
+                  timestampString = "491154085.921318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "438">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__26-[NetWorkTest testExample]_block_invoke"
+                  moduleName = "LangPatchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatchTests/NetWorkTest.m"
+                  timestampString = "491154085.921566"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "851">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__26-[NetWorkTest testExample]_block_invoke"
+                  moduleName = "LangPatchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatchTests/NetWorkTest.m"
+                  timestampString = "491154085.921845"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1069">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__26-[NetWorkTest testExample]_block_invoke"
+                  moduleName = "LangPatchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatchTests/NetWorkTest.m"
+                  timestampString = "491154085.922092"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1191">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LangPatch/LangPatchNetWork.m"
+            timestampString = "491154084.525811"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-POST:parameters:success:failure:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,76 +113,78 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LangPatchTests/LangPatchTests.m"
-            timestampString = "491065158.999058"
+            filePath = "LangPatch/LangPatchNetWork.m"
+            timestampString = "491154084.525811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-testNeedUpdate"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-POST:parameters:success:failure:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__32-[LangPatchTests testNeedUpdate]_block_invoke"
-                  moduleName = "LangPatchTests"
+                  symbolName = "__52-[LangPatchNetWork POST:parameters:success:failure:]_block_invoke"
+                  moduleName = "LangPatch"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatchTests/LangPatchTests.m"
-                  timestampString = "491065166.06308"
+                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatch/LangPatchNetWork.m"
+                  timestampString = "491154085.546045"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "289">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "476">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__32-[LangPatchTests testNeedUpdate]_block_invoke"
-                  moduleName = "LangPatchTests"
+                  symbolName = "__52-[LangPatchNetWork POST:parameters:success:failure:]_block_invoke"
+                  moduleName = "LangPatch"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatchTests/LangPatchTests.m"
-                  timestampString = "491065166.063299"
+                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatch/LangPatchNetWork.m"
+                  timestampString = "491154085.54625"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "692">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[LangPatchTests testNeedUpdate]_block_invoke"
-                  moduleName = "LangPatchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatchTests/LangPatchTests.m"
-                  timestampString = "491065166.06356"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "1291">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[LangPatchTests testNeedUpdate]_block_invoke"
-                  moduleName = "LangPatchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xing/Documents/ios%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/ios%E9%A1%B9%E7%9B%AE/LangPatch/LangPatchTests/LangPatchTests.m"
-                  timestampString = "491065166.063801"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "1413">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "520">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LangPatchTests/NetWorkTest.m"
+            timestampString = "491153874.538743"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-testExample1"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LangPatch/LangPatchNetWork.m"
+            timestampString = "491154084.601776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-POST:parameters:success:failure:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
