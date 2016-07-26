@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DownloadTool : NSObject
+@interface LangPatchDownloadTool : NSObject
 - (void)DownloadWithUrl:(NSString *)PathUrl
                 success:(void(^)(NSString *FullPath))success
                 failure:(void(^)(NSError *error))failure;

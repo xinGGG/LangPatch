@@ -8,7 +8,7 @@
 //
 #import "AFTestCase.h"
 #import "LangPatchFileManager.h"
-#import "DownloadTool.h"
+#import "LangPatchDownloadTool.h"
 @interface LangPatchTests : AFTestCase
 @property (nonatomic, strong) id content;
 @end

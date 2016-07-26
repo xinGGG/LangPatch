@@ -7,9 +7,9 @@
 //
 
 #import "AFTestCase.h"
-#import "DownloadTool.h"
+#import "LangPatchDownloadTool.h"
 @interface DownToolTests : AFTestCase
-@property (nonatomic, strong) DownloadTool *tool ;
+@property (nonatomic, strong) LangPatchDownloadTool *tool ;
 @end
 
 @implementation DownToolTests
@@ -17,7 +17,7 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    self.tool = [[DownloadTool alloc] init];
+    self.tool = [[LangPatchDownloadTool alloc] init];
 
 }
 

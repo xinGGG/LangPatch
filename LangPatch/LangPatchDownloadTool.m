@@ -8,12 +8,12 @@
 #define GetCacheWithFileName(FileName) [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:FileName]
 #define L(content,defaultString) [[LangPatchFileManager defaultUtil] internationalizationKey:content default:defaultString]
 
-#import "DownloadTool.h"
-@interface DownloadTool()<NSURLConnectionDelegate>
+#import "LangPatchDownloadTool.h"
+@interface LangPatchDownloadTool()<NSURLConnectionDelegate>
 @property (nonatomic, assign) NSInteger recLenth;
 @property (nonatomic, strong) NSMutableData *data;
 @end
-@implementation DownloadTool
+@implementation LangPatchDownloadTool
 
 - (void)DownloadWithUrl:(NSString *)PathUrl
                 success:(void(^)(NSString *FullPath))success
