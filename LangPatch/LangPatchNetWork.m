@@ -19,6 +19,8 @@
     });
     return sharedInstance;
 }
+
+//解析输出
 -(void)POST:(NSString *)URLString
  parameters:(id)parameters
     success:(void(^)(id responseObject))success
@@ -30,18 +32,16 @@
         if (data!=nil && data.length>0) {
             NSString *resString =
             [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSData *resData = [resString dataUsingEncoding:NSUTF8StringEncoding];
-            
-              id res1 =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            
-            id res = [NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableContainers error:nil];
-            !success?:success(res);
+           NSDictionary *dict = [LangPatchNetWork dictionaryWithJsonString:resString];
+            !success?:success(dict);
         }else{
             !failure?:failure(connectionError);
         }
     }];
 
 }
+
+
 //post异步请求封装函数
 - (void)POST:(NSString *)URL RequestParams:(NSDictionary *)params FinishBlock:(void (^)(NSURLResponse *response, NSData *data, NSError *connectionError)) block{
     //把传进来的URL字符串转变为URL地址
@@ -79,6 +79,24 @@
         NSLog(@"post()方法参数解析结果：%@",result);
     }
     return result;
+}
+
+//解析json为NSDictionary
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
 }
 
 @end

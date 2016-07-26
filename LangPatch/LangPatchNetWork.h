@@ -16,6 +16,7 @@
     success:(void(^)(id responseObject))success
     failure:(void(^)(NSError *error))failure;
 
+//请求未解析 用于单元测试
 - (void)POST:(NSString *)URL RequestParams:(NSDictionary *)params FinishBlock:(void (^)(NSURLResponse *response, NSData *data, NSError *connectionError)) block;
 
 @end
